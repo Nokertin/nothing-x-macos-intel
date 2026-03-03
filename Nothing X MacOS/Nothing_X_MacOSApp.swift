@@ -14,6 +14,22 @@ struct Nothing_X_MacOSApp: App {
     @StateObject private var viewModel = MainViewViewModel(bluetoothService: BluetoothServiceImpl(), nothingRepository: NothingRepositoryImpl.shared, nothingService: NothingServiceImpl.shared)
     @StateObject private var budsPickerViewModel = BudsPickerComponentViewModel()
 
+    private var batteryText: String {
+        guard let left = viewModel.leftBattery, let right = viewModel.rightBattery else {
+            return ""
+        }
+        let l = Int(left)
+        let r = Int(right)
+        switch store.batteryDisplayMode {
+        case .both:
+            return l == r ? "\(l)%" : "\(l)·\(r)%"
+        case .average:
+            return "\((l + r) / 2)%"
+        case .minimum:
+            return "\(min(l, r))%"
+        }
+    }
+
     var body: some Scene {
         MenuBarExtra {
             NavigationStack(path: $viewModel.navigationPath.animation(.default)) {
@@ -53,13 +69,8 @@ struct Nothing_X_MacOSApp: App {
             
         } label: {
             
-            if (viewModel.rightBattery != nil && viewModel.rightBattery != nil) {
-                Label("\(Double((viewModel.leftBattery ?? 0.0) + (viewModel.rightBattery ?? 0.0)) / 2.0, specifier: "%.0f")%", image: "nothing.ear.1")
-                    .labelStyle(.titleAndIcon)
-            } else {
-                Label("", image: "nothing.ear.1")
-                    .labelStyle(.titleAndIcon)
-            }
+            Label(batteryText, image: "nothing.ear.1")
+                .labelStyle(.titleAndIcon)
 
         }
         .menuBarExtraStyle(.window)

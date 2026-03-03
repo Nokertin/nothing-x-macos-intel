@@ -6,6 +6,23 @@
 //
 
 import Foundation
+import SwiftUI
+
+enum BatteryDisplayMode: String, CaseIterable, Identifiable {
+    case both = "both"
+    case average = "average"
+    case minimum = "minimum"
+
+    var label: String {
+        switch self {
+        case .both: return "L·R"
+        case .average: return "AVG"
+        case .minimum: return "MIN"
+        }
+    }
+
+    var id: String { self.rawValue }
+}
 
 enum DiscoverStates {
     case not_discovering
@@ -55,6 +72,8 @@ enum NoiseControlOptions: String, CaseIterable, Identifiable, Hashable {
 }
 
 class Store: ObservableObject {
+    @AppStorage("batteryDisplayMode") var batteryDisplayMode: BatteryDisplayMode = .both
+
     // [left, right]
     @Published var selectedTripleTapOp: [TripleTapOptions] = [TripleTapOptions.skip_forward, TripleTapOptions.skip_forward]
     @Published var selectedtapAndHoldOp: [TapAndHoldOptions] = [TapAndHoldOptions.noise_control, TapAndHoldOptions.noise_control]

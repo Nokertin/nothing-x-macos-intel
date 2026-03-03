@@ -18,7 +18,24 @@ struct SettingsView: View {
     @StateObject private var viewModel = SettingsViewViewModel(nothingService: NothingServiceImpl.shared, nothingRepository: NothingRepositoryImpl.shared)
     
     @EnvironmentObject private var mainViewModel: MainViewViewModel
-    
+    @EnvironmentObject private var store: Store
+
+    private var batteryModeOffset: CGFloat {
+        switch store.batteryDisplayMode {
+        case .both: return -66
+        case .average: return 0
+        case .minimum: return 66
+        }
+    }
+
+    private var batteryDisplayDescription: String {
+        switch store.batteryDisplayMode {
+        case .both: return "Show both values when different (75·85%)"
+        case .average: return "Show average of left and right"
+        case .minimum: return "Show lowest battery level"
+        }
+    }
+
     var body: some View {
         
         ZStack(alignment: .bottom) {
@@ -36,16 +53,72 @@ struct SettingsView: View {
                 ScrollView(.vertical, showsIndicators: false) {
                     
                     VStack(alignment: .leading) {
-                        
+
+                        HStack {
+                            Text("App settings")
+                                .font(.custom("NDOT45inspiredbyNOTHING", size: 10))
+                                .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8)))
+                                .multilineTextAlignment(.center)
+                                .textCase(.uppercase)
+                            Spacer()
+                        }
+                        .padding(.vertical, 6)
+
+                        VStack(alignment: .leading, spacing: 6) {
+                            Text("Menu bar battery")
+                                .font(.system(size: 10, weight: .light))
+                                .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8)))
+                                .textCase(.uppercase)
+
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 100)
+                                    .fill(Color(#colorLiteral(red: 0.10980392247438431, green: 0.11372549086809158, blue: 0.12156862765550613, alpha: 1)))
+                                    .frame(width: 200, height: 28)
+
+                                Capsule()
+                                    .frame(width: 62, height: 24)
+                                    .foregroundColor(Color(#colorLiteral(red: 0.7568627595901489, green: 0.7607843279838562, blue: 0.7686274647712708, alpha: 1)))
+                                    .offset(x: batteryModeOffset, y: 0)
+                                    .animation(.bouncy(duration: 0.3), value: store.batteryDisplayMode)
+
+                                HStack(spacing: 0) {
+                                    ForEach(BatteryDisplayMode.allCases) { mode in
+                                        Button(action: {
+                                            store.batteryDisplayMode = mode
+                                        }) {
+                                            Text(mode.label)
+                                                .font(.system(size: 10, weight: .medium))
+                                                .foregroundColor(store.batteryDisplayMode == mode
+                                                    ? Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.8))
+                                                    : Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8)))
+                                                .frame(width: 66, height: 28)
+                                        }
+                                        .buttonStyle(PlainButtonStyle())
+                                    }
+                                }
+                                .frame(width: 200, height: 28)
+                            }
+
+                            Text(batteryDisplayDescription)
+                                .font(.system(size: 10, weight: .light))
+                                .foregroundColor(Color(#colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)))
+                        }
+                        .padding(.bottom, 12)
+
+                        Rectangle()
+                            .fill(Color(#colorLiteral(red: 0.07009194046, green: 0.07611755282, blue: 0.08425947279, alpha: 1)))
+                            .frame(height: 0.8)
+                            .padding(.bottom, 4)
+
                         HStack {
                             // Heading
                             Text("Device settings")
                                 .font(.custom("NDOT45inspiredbyNOTHING", size: 10))
-                            
+
                                 .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8)))
                                 .multilineTextAlignment(.center)
                                 .textCase(.uppercase)
-                            
+
                             Spacer()
                         }
                         .padding(.vertical, 6)
@@ -245,5 +318,6 @@ struct SettingsView_Previews: PreviewProvider {
         
         SettingsView()
             .environmentObject(mainViewModel)
+            .environmentObject(Store())
     }
 }
