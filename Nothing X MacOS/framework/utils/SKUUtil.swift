@@ -120,6 +120,14 @@ func codenameFromSKU(sku: SKU) -> Codenames {
         return .TWOS
     case .EAR3_1, .EAR3_2:
         return .EAR3
+    case .GIRAFARIG_BLACK, .GIRAFARIG_GREEN, .GIRAFARIG_ORANGE:
+        return .GIRAFARIG
+    case .GLIGAR_WHITE, .GLIGAR_BLUE:
+        return .GLIGAR
+    case .HOOTHOOT_BLACK, .HOOTHOOT_WHITE, .HOOTHOOT_ORANGE:
+        return .HOOTHOOT
+    case .ELEKID_BLACK, .ELEKID_GREY:
+        return .ELEKID
     default:
         return .UNKNOWN
     }
@@ -182,6 +190,14 @@ func codenameFromDeviceName(name: String) -> Codenames {
         return .EAR3
     } else if lowered.contains("ear (open)") {
         return .FLAFFY
+    } else if lowered.contains("cmf buds 2 plus") || lowered.contains("buds 2 plus") {
+        return .GLIGAR
+    } else if lowered.contains("cmf buds 2a") || lowered.contains("buds 2a") {
+        return .HOOTHOOT
+    } else if lowered.contains("cmf buds 2") || lowered.contains("buds 2") {
+        return .GIRAFARIG
+    } else if lowered.contains("headphone (1)") || lowered.contains("headphone(1)") {
+        return .ELEKID
     }
     return .UNKNOWN
 }

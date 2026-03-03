@@ -73,4 +73,22 @@ enum SKU : String, Codable {
     case EAR3_1 = "25"
     case EAR3_2 = "26"
 
+    // CMF Buds 2 / Girafarig
+    case GIRAFARIG_BLACK = "84"
+    case GIRAFARIG_GREEN = "85"
+    case GIRAFARIG_ORANGE = "86"
+
+    // CMF Buds 2 Plus / Gligar
+    case GLIGAR_WHITE = "87"
+    case GLIGAR_BLUE = "88"
+
+    // CMF Buds 2a / Hoothoot
+    case HOOTHOOT_BLACK = "89"
+    case HOOTHOOT_WHITE = "90"
+    case HOOTHOOT_ORANGE = "91"
+
+    // Nothing Headphone (1) / Elekid
+    case ELEKID_BLACK = "92"
+    case ELEKID_GREY = "93"
+
 }

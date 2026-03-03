@@ -18,4 +18,8 @@ enum Codenames : String, Codable {
     case CLEFFA = "B162"
     case CROBAT = "B164"
     case EAR3 = "B173"
+    case GIRAFARIG = "B179"
+    case GLIGAR = "B184"
+    case HOOTHOOT = "B185"
+    case ELEKID = "B170"
 }

@@ -132,7 +132,51 @@ struct DeviceCapabilities {
         case .EAR3: // B173 - Ear (3)
             return DeviceCapabilities(
                 supportsCustomEQ: true,
-                supportsEnhancedBass: false,
+                supportsEnhancedBass: true,
+                supportsPersonalizedANC: false,
+                supportsEarTipTest: true,
+                supportsCaseLED: false,
+                supportsANCCycleConfig: true,
+                supportsDoubleTap: true,
+                supportsDoubleTapAndHold: true
+            )
+        case .GIRAFARIG: // B179 - CMF Buds 2
+            return DeviceCapabilities(
+                supportsCustomEQ: true,
+                supportsEnhancedBass: true,
+                supportsPersonalizedANC: false,
+                supportsEarTipTest: true,
+                supportsCaseLED: false,
+                supportsANCCycleConfig: true,
+                supportsDoubleTap: true,
+                supportsDoubleTapAndHold: true
+            )
+        case .GLIGAR: // B184 - CMF Buds 2 Plus
+            return DeviceCapabilities(
+                supportsCustomEQ: false,
+                supportsEnhancedBass: true,
+                supportsPersonalizedANC: false,
+                supportsEarTipTest: true,
+                supportsCaseLED: false,
+                supportsANCCycleConfig: true,
+                supportsDoubleTap: true,
+                supportsDoubleTapAndHold: true
+            )
+        case .HOOTHOOT: // B185 - CMF Buds 2a
+            return DeviceCapabilities(
+                supportsCustomEQ: false,
+                supportsEnhancedBass: true,
+                supportsPersonalizedANC: false,
+                supportsEarTipTest: false,
+                supportsCaseLED: false,
+                supportsANCCycleConfig: true,
+                supportsDoubleTap: true,
+                supportsDoubleTapAndHold: true
+            )
+        case .ELEKID: // B170 - Nothing Headphone (1)
+            return DeviceCapabilities(
+                supportsCustomEQ: true,
+                supportsEnhancedBass: true,
                 supportsPersonalizedANC: false,
                 supportsEarTipTest: false,
                 supportsCaseLED: false,
