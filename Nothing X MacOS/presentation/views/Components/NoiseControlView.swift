@@ -136,7 +136,7 @@ struct NoiseControlView<SelectedANC: Hashable>: View {
                 }
                 .frame(width: 180)
             } else {
-                Text("NOISE CONTROL").font(.custom("5by7", size: 12)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8))).multilineTextAlignment(.center)
+                Text("NOISE CONTROL").font(.custom("NDOT45inspiredbyNOTHING", size: 7)).foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8))).multilineTextAlignment(.center)
                     .padding(.top, 2)
             }
             

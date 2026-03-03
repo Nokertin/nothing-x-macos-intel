@@ -31,7 +31,7 @@ struct EqualizerView: View {
                 VStack(alignment: .leading) {
                     // Heading
                     Text("EQUALISER")
-                        .font(.custom("5by7", size: 16))
+                        .font(.custom("NDOT45inspiredbyNOTHING", size: 10))
                         .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8)))
                         .multilineTextAlignment(.center)
                         .padding(.bottom, 4)

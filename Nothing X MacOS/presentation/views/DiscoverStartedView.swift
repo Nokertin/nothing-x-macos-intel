@@ -36,7 +36,7 @@ struct DiscoverStartedView: View {
                         if viewModel.shouldShowDiscoveryMessage {
                             
                             Text("Scanning")
-                                .font(.custom("5by7", size: 16))
+                                .font(.custom("NDOT45inspiredbyNOTHING", size: 10))
                                 .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8)))
                                 .multilineTextAlignment(.leading)
                                 .textCase(.uppercase)
@@ -53,7 +53,7 @@ struct DiscoverStartedView: View {
                             
                             //these are hidden
                             Text("Scanning")
-                                .font(.custom("5by7", size: 16))
+                                .font(.custom("NDOT45inspiredbyNOTHING", size: 10))
                                 .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8)))
                                 .multilineTextAlignment(.leading)
                                 .textCase(.uppercase)
@@ -175,7 +175,7 @@ struct DiscoverStartedView: View {
                                 
                                 Text(viewModel.deviceName)
                                     .lineLimit(1)
-                                    .font(.custom("5by7", size: viewModel.deviceNameFontSize))
+                                    .font(.custom("NDOT45inspiredbyNOTHING", size: viewModel.deviceNameFontSize))
                                     .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8)))
                                     .multilineTextAlignment(.leading)
                                     .offset(x: viewModel.deviceNameOffsetX, y: viewModel.deviceNameOffsetY)

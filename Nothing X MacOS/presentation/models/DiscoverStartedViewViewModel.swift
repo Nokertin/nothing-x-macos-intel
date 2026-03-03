@@ -33,7 +33,7 @@ class DiscoverStartedViewViewModel : ObservableObject {
     @Published var budsBackgroundOffsetX: CGFloat = 170 // 0 when done
     @Published var deviceNameOffsetX: CGFloat = 80
     @Published var deviceNameOffsetY: CGFloat = 30
-    @Published var deviceNameFontSize: CGFloat = 12
+    @Published var deviceNameFontSize: CGFloat = 7
     @Published var showSetUpButton = false
     
     
@@ -154,7 +154,7 @@ class DiscoverStartedViewViewModel : ObservableObject {
         
         deviceNameOffsetX = 0
         deviceNameOffsetY = 48
-        deviceNameFontSize = 16
+        deviceNameFontSize = 10
         withAnimation(.smooth(duration: 0.6)) {
             shouldShowDeviceName = true
             showSetUpButton = true

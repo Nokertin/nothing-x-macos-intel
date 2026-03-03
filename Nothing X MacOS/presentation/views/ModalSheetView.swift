@@ -30,7 +30,7 @@ struct ModalSheetView : View {
                         
                         if var title = title {
                             Text(title)
-                                .font(.custom("5by7", size: 14))
+                                .font(.custom("NDOT45inspiredbyNOTHING", size: 9))
                                 .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8)))
                                 .multilineTextAlignment(.leading)
                                 .textCase(.uppercase)

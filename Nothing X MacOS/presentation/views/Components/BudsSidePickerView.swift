@@ -16,7 +16,7 @@ struct BudsSidePickerView<SelectedBud: Hashable>: View {
                 VStack(spacing: 4) {
                     Text(side.rawValue.uppercased())
                         .padding(0)
-                        .font(.custom("5by7", size: 12))
+                        .font(.custom("NDOT45inspiredbyNOTHING", size: 7))
                         .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8)))
                     
                     RoundedRectangle(cornerRadius: 20)

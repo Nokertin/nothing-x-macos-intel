@@ -49,7 +49,7 @@ struct FindMyBudsView: View {
                         if !isRunning {
                             
                             Text("Find my buds")
-                                .font(.custom("5by7", size: 16))
+                                .font(.custom("NDOT45inspiredbyNOTHING", size: 10))
                                 .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8)))
                                 .multilineTextAlignment(.leading)
                                 .textCase(.uppercase)

@@ -5,7 +5,10 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Resources/Fonts/5by7.ttf</string>
+		<string>Resources/Fonts/ndot-45.otf</string>
 	</array>
+	<key>ATSApplicationFontsPath</key>
+	<string>.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>App communicates using Core Bluetooth</string>

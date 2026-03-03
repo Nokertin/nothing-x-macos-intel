@@ -50,7 +50,7 @@ struct BudsPickerComponent: View {
         VStack(alignment: .center) {
             
             Text(viewModel.selectedBudText)
-                .font(.custom("5by7", size: 12))
+                .font(.custom("NDOT45inspiredbyNOTHING", size: 7))
             
                 .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.8)))
                 .multilineTextAlignment(.center)

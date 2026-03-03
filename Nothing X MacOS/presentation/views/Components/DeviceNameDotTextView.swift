@@ -14,7 +14,7 @@ struct DeviceNameDotTextView: View {
         VStack {
             Spacer(minLength: 4)
             Text(mainViewModel.nothingDevice?.name ?? "ear (1)")
-                .font(.custom("5by7", size: 20)).foregroundColor(Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)))
+                .font(.custom("NDOT45inspiredbyNOTHING", size: 11)).foregroundColor(Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)))
                 .rotationEffect(.degrees(-90))
                 .padding()
                 .fixedSize()
