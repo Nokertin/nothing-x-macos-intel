@@ -1,6 +1,6 @@
 # Nothing X MacOS (Intel Support)
 
-> [Info]
+> [!Info]
 > **Intel Mac Compatibility:** I noticed the original app doesn't run on Intel Macs, so I recompiled it to make it accessible for owners of older Mac models. No code changes were made — just ensured quick compatibility for everyone.
 
 # Nothing X for macOS (Unofficial)
