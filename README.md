@@ -1,4 +1,4 @@
-# Nothing X for macOS (Unofficial)
+# Nothing X for macOS (Intel Based Mac) (Unofficial)
 
 An unofficial macOS companion app for Nothing and CMF earbuds. Inspired by the Nothing X iOS app, built with SwiftUI and Core Bluetooth.
 
