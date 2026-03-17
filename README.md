@@ -1,3 +1,8 @@
+# Nothing X MacOS (Intel Support)
+
+> [Info]
+> **Intel Mac Compatibility:** I noticed the original app doesn't run on Intel Macs, so I recompiled it to make it accessible for owners of older Mac models. No code changes were made — just ensured quick compatibility for everyone.
+
 # Nothing X for macOS (Intel Based Mac) (Unofficial)
 
 An unofficial macOS companion app for Nothing and CMF earbuds. Inspired by the Nothing X iOS app, built with SwiftUI and Core Bluetooth.
